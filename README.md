@@ -14,7 +14,7 @@
 
 Repositorio independiente de agentes listos para usar con [Claude Code](https://claude.ai/code). Cada agente es un fichero `.md` con frontmatter YAML que define su nombre, descripción, modelo, herramientas y system prompt.
 
-Los agentes están organizados por carpetas según su ámbito de aplicación. Puedes usarlos directamente copiándolos a `~/.claude/agents/` (globales) o a `{proyecto}/.claude/agents/` (por proyecto), o importarlos desde [Agent Hub](https://github.com/adanoliva/cdm).
+Los agentes están organizados por carpetas según su ámbito de aplicación. Puedes usarlos directamente copiándolos a `~/.claude/agents/` (globales) o a `{proyecto}/.claude/agents/` (por proyecto).
 
 ---
 
@@ -214,18 +214,6 @@ cp tech-web-nextjs/*.md .claude/agents/
 @unity-dev crea un sistema de inventario con ScriptableObjects
 @test-writer genera tests para el módulo de pagos
 ```
-
----
-
-## Uso con Agent Hub
-
-[Agent Hub](https://github.com/adanoliva/cdm) sincroniza este repositorio automáticamente y gestiona qué agentes van a cada proyecto según su categoría y tecnología. Si usas Agent Hub, no necesitas copiar ficheros manualmente.
-
-Para importar un agente concreto de este repositorio desde Agent Hub:
-
-1. Ve a **Ajustes → Agentes externos**
-2. Pega la URL raw del fichero `.md` (ej: `https://raw.githubusercontent.com/adanoliva/agents-directory/master/global/code-reviewer.md`)
-3. Revisa el preview y elige en qué nivel guardarlo
 
 ---
 
