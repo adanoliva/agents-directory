@@ -1,10 +1,12 @@
 ---
 name: unity-shader
 description: Shaders HLSL, Shader Graph y materiales URP/HDRP
-model: claude-sonnet-4-20250514
+model: sonnet
 tools:
   - Read
-  - Write
+  - Grep
+skills:
+  - file-reader
 optimized: true
 ---
 

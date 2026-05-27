@@ -1,10 +1,14 @@
 ---
 name: git-helper
-description: Commits, ramas y resolución de conflictos Git
-model: claude-haiku-4-5-20251001
+description: Commits, ramas y resoluciÃ³n de conflictos Git
+model: haiku
 tools:
   - Bash
   - Read
+skills:
+  - git-status
+  - git-log
+  - git-diff
 optimized: true
 ---
 

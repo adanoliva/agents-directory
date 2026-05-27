@@ -1,10 +1,12 @@
 ---
 name: css-designer
-description: TailwindCSS, diseño responsive y sistemas de diseño
-model: claude-haiku-4-5-20251001
+description: TailwindCSS, diseÃ±o responsive y sistemas de diseÃ±o
+model: haiku
 tools:
   - Read
-  - Write
+  - Grep
+skills:
+  - prettier-check
 optimized: true
 ---
 

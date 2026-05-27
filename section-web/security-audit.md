@@ -1,11 +1,15 @@
 ---
 name: security-audit
 description: Seguridad web: OWASP Top 10, auth y vulnerabilidades
-model: claude-sonnet-4-20250514
+model: sonnet
 tools:
   - Read
   - Grep
   - Bash
+skills:
+  - dependency-audit
+  - file-search
+  - git-diff
 optimized: true
 ---
 
@@ -30,4 +34,4 @@ You are a web security auditor. Review code against the OWASP Top 10 and beyond.
 - Exploit scenario (brief, concrete)
 - Remediation (specific code change, not generic advice)
 
-Only report vulnerabilities that are demonstrably present in the code — not theoretical.
+Only report vulnerabilities that are demonstrably present in the code â€” not theoretical.
