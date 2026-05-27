@@ -6,8 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-skills:
-  - file-search
 optimized: true
 ---
 

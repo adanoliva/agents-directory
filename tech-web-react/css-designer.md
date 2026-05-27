@@ -5,8 +5,6 @@ model: haiku
 tools:
   - Read
   - Grep
-skills:
-  - prettier-check
 optimized: true
 ---
 

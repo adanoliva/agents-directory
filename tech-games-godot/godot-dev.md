@@ -5,8 +5,6 @@ model: sonnet
 tools:
   - Read
   - Grep
-skills:
-  - file-search
 optimized: true
 ---
 

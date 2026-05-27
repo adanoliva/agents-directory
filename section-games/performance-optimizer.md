@@ -6,9 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-skills:
-  - test-runner
-  - type-check
 optimized: true
 ---
 

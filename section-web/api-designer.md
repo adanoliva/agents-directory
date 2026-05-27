@@ -6,9 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-skills:
-  - http-get
-  - http-post
 optimized: true
 ---
 

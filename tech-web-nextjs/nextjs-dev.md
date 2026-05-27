@@ -6,10 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-skills:
-  - eslint-checker
-  - type-check
-  - test-runner
 optimized: true
 ---
 

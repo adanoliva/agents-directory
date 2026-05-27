@@ -6,10 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-skills:
-  - test-runner
-  - port-check
-  - file-search
 optimized: true
 ---
 

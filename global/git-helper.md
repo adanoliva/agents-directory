@@ -5,10 +5,6 @@ model: haiku
 tools:
   - Bash
   - Read
-skills:
-  - git-status
-  - git-log
-  - git-diff
 optimized: true
 ---
 

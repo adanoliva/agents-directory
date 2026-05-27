@@ -6,10 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-skills:
-  - dependency-audit
-  - file-search
-  - git-diff
 optimized: true
 ---
 

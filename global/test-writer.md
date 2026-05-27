@@ -7,11 +7,6 @@ tools:
   - Grep
   - Edit
   - Bash
-skills:
-  - test-runner
-  - jest-runner
-  - vitest-runner
-  - test-coverage
 optimized: true
 ---
 

@@ -5,9 +5,6 @@ model: haiku
 tools:
   - Read
   - Grep
-skills:
-  - readme-reader
-  - markdown-lint
 optimized: true
 ---
 

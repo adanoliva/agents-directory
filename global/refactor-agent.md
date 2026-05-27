@@ -7,11 +7,6 @@ tools:
   - Grep
   - Edit
   - Bash
-skills:
-  - eslint-fix
-  - prettier-fix
-  - type-check
-  - test-runner
 optimized: true
 ---
 

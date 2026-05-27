@@ -6,12 +6,6 @@ tools:
   - Read
   - Grep
   - Bash
-skills:
-  - eslint-checker
-  - type-check
-  - test-runner
-  - dependency-audit
-  - http-get
 optimized: true
 ---
 

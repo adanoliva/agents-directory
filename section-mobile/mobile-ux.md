@@ -5,8 +5,6 @@ model: haiku
 tools:
   - Read
   - Grep
-skills:
-  - file-reader
 optimized: true
 ---
 

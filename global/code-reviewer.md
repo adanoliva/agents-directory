@@ -5,10 +5,6 @@ model: sonnet
 tools:
   - Read
   - Grep
-skills:
-  - eslint-checker
-  - type-check
-  - dependency-audit
 optimized: true
 ---
 
