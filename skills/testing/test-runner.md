@@ -2,7 +2,7 @@
 name: test-runner
 description: Ejecuta los tests del proyecto via npm test
 category: testing
-version: 1.1.0
+version: 1.2.0
 type: bash
 timeout: 180000
 parameters:
@@ -18,4 +18,4 @@ outputs:
     description: 0 si todos pasan, distinto de 0 si fallan
 ---
 
-npm test
+npm test {args}

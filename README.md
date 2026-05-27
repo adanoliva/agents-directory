@@ -1,3 +1,10 @@
+---
+name: README
+description: model: sonnet
+model: sonnet
+tools: []
+---
+
 # agents-directory
 
 > Colección de agentes de Claude Code organizados por dominio y tecnología.

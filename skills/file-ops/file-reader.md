@@ -2,7 +2,7 @@
 name: file-reader
 description: Lee y muestra el contenido de un archivo del proyecto
 category: file-ops
-version: 1.1.0
+version: 1.2.0
 type: bash
 timeout: 5000
 parameters:
@@ -16,4 +16,4 @@ outputs:
     description: Contenido del archivo
 ---
 
-cat {path}
+node -e "const fs=require('fs');const p='{path}';if(!fs.existsSync(p)){console.error('No existe: '+p);process.exit(1)};console.log(fs.readFileSync(p,'utf8'))"
