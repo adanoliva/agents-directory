@@ -5,24 +5,22 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — .NET / C#
+## .NET Rules
 
-This project uses **.NET 8+** with C# 12.
-
-- **ASP.NET Core**: minimal APIs or controllers depending on project complexity
-- **Entity Framework Core** with Code-First and migrations
-- Native framework Dependency Injection — don't manually register services where DI can infer
-- `ILogger<T>` for structured logging
-- **Records** for immutable DTOs, **sealed classes** where inheritance isn't needed
+**Core:**
+- Use **.NET 8+** and C# 12.
+- Prefer **Minimal APIs** for simple services.
+- Use **EF Core** (Code-First + Migrations).
+- Use native DI; avoid manual registration.
+- Log via `ILogger<T>`.
+- Use **Records** (DTOs) and **sealed classes**.
 
 **Patterns:**
-- Repository pattern optional — EF DbContext is already a Unit of Work
-- MediatR for CQRS if the project separates commands/queries
-- `Result<T>` or discriminated unions (with OneOf) for error handling without exceptions
-- FluentValidation for request validation
-- `CancellationToken` in all async methods that do I/O
+- EF `DbContext` as Unit of Work.
+- Use MediatR for CQRS if requested.
+- Use `Result<T>` or `OneOf` for error handling.
+- Use FluentValidation and `CancellationToken` in I/O.
 
 **Conventions:**
-- Nullable reference types enabled (`<Nullable>enable</Nullable>`)
-- `appsettings.json` + `appsettings.{Environment}.json` for configuration
-- `IOptions<T>` for strongly-typed configuration
+- Enable **Nullable reference types**.
+- Use `appsettings.json` and `IOptions<T>`.

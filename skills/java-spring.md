@@ -5,24 +5,22 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Java + Spring Boot
+## Spring Boot 3 Rules (Java 21)
 
-This project uses **Spring Boot 3** with Java 21.
-
-- **Spring MVC** or **WebFlux** (reactive) per the project — don't mix them
-- **Spring Data JPA** with Hibernate for persistence
-- **Spring Security** for authentication and authorization
-- Java 21 records for immutable DTOs
-- Virtual threads (Project Loom) available in Spring Boot 3.2+
+**Framework:**
+- Use **Spring MVC** or **WebFlux** (don't mix).
+- Use **Spring Data JPA** (Hibernate) and **Spring Security**.
+- Use Java 21 **Records** for DTOs.
+- Use **Virtual threads** (Project Loom) in v3.2+.
 
 **Architecture:**
-- Layers: `Controller` → `Service` → `Repository`
-- Standard annotations: `@RestController`, `@Service`, `@Repository`, `@Component`
-- `@Transactional` on service methods that modify data
-- DTOs separate from JPA entities — never expose entities directly in the API
+- Layers: `Controller` -> `Service` -> `Repository`.
+- Use `@RestController`, `@Service`, `@Repository`.
+- Use `@Transactional` for data modifications.
+- Keep DTOs separate from JPA entities.
 
 **Conventions:**
-- `application.yml` (not `.properties`) for readable configuration
-- `@Value` for simple values, `@ConfigurationProperties` for config groups
-- Tests: `@SpringBootTest` for integration, `@WebMvcTest` for controllers, `@DataJpaTest` for repositories
-- Lombok to reduce boilerplate (`@Data`, `@Builder`, `@RequiredArgsConstructor`)
+- Use `application.yml`.
+- Config: `@Value` (simple) or `@ConfigurationProperties` (groups).
+- Testing: `@SpringBootTest`, `@WebMvcTest`, `@DataJpaTest`.
+- Use **Lombok** (`@Data`, `@Builder`, `@RequiredArgsConstructor`).

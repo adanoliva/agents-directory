@@ -5,28 +5,24 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Monorepo
-
-This project uses a **monorepo** managed with Turborepo or Nx.
+## Monorepo Rules
 
 **Structure:**
-- `apps/`: deployable applications (web, api, mobile)
-- `packages/`: shared libraries (ui, utils, config, types)
-- Root `package.json` with defined workspaces
-- `turbo.json` or `nx.json` to define the task pipeline
+- `apps/`: deployables.
+- `packages/`: shared (ui, utils, types).
+- Root `package.json` defines workspaces.
 
 **Turborepo:**
-- `turbo run build` runs builds in parallel respecting dependencies
-- `outputs` configured for remote caching (Vercel Remote Cache or equivalent)
-- `dependsOn` to order tasks: `["^build"]` means "build dependencies first"
+- Configure `turbo.json` task pipeline.
+- Use `dependsOn: ["^build"]` for dependency ordering.
+- Enable remote caching.
 
 **Nx:**
-- `nx affected --target=test` to run only what's affected by changes
-- `nx graph` to visualize the dependency graph
-- Generators to create apps and libraries with standardized conventions
+- Use `nx affected` to run tasks only on changed packages.
+- Visualize via `nx graph`.
+- Use generators for apps/libs.
 
 **Conventions:**
-- Independent versioning per package or unified with Changesets
-- TypeScript paths to import between packages: `@my-org/ui` → `packages/ui/src`
-- Tests and lint run only on the package affected by the PR
-- Dockerfile per app, build from monorepo root with `--filter`
+- Versioning: Changesets or unified.
+- TS paths: `@my-org/ui` -> `packages/ui/src`.
+- Docker: build from root per app using filters.

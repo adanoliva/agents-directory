@@ -5,19 +5,15 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Vue 3
+## Vue 3
 
-This project uses **Vue 3** with Composition API and TypeScript.
-
-- `<script setup>` as the standard component format
-- `ref()` for primitives, `reactive()` for complex objects, `computed()` for derived values
-- `watch` and `watchEffect` with cleanup when applicable
-- Global state: **Pinia** (not Vuex) — modular stores with typed actions, getters and state
-- Routing: Vue Router 4 with route lazy loading
-- `defineProps` and `defineEmits` with explicit typing
-
-**Conventions:**
-- Component names in PascalCase
-- Composables in `use*.ts` for reusable logic
-- Named slots for container components
-- `v-model` for two-way binding in forms
+- **Setup**: Use `<script setup>`, Composition API, and TypeScript.
+- **Reactivity**: `ref` (primitives), `reactive` (objects), `computed` (derived). Use `watch`/`watchEffect` with cleanup.
+- **State**: Use **Pinia** with modular typed stores.
+- **Routing**: Vue Router 4 with lazy loading.
+- **Typing**: Use `defineProps` and `defineEmits` explicitly.
+- **Conventions**:
+  - PascalCase component names.
+  - `use*.ts` for Composables.
+  - Named slots for containers.
+  - `v-model` for form bindings.

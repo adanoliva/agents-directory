@@ -1,32 +1,26 @@
 ---
 name: rust
-description: Rust con Tokio, Axum y ownership idiomático
+description: Rust con Tokio, Axum y ownership idiomático  
 model: sonnet
 tools: []
 ---
 
-## Technology context — Rust
+## Rust Rules (2021 Edition)
 
-This project uses **Rust (2021 edition)**.
-
-- Explicit ownership and borrowing — don't use `.clone()` to dodge the borrow checker without thinking
-- `Result<T, E>` and `Option<T>` — never `.unwrap()` in production code, use `?` or explicit handling
-- `thiserror` for custom error types, `anyhow` for error handling in binaries
-- **Tokio** as async runtime, `async/await` for non-blocking I/O
+**Core:**
+- Handle ownership/borrowing; avoid thoughtless `.clone()`.
+- Error handling: use `Result<T, E>`/`Option<T>`. Never `.unwrap()` in production; use `?`.
+- Use `thiserror` (custom errors) or `anyhow` (binaries).
+- Async: use **Tokio** and `async/await`.
 
 **Web:**
-- **Axum** as HTTP framework: routers, extractors, layers (middleware)
-- `serde` + `serde_json` for serialization
-- `sqlx` for async SQL queries with compile-time checking
-- `tower` layers for reusable middleware
+- Framework: **Axum** (routers, extractors, layers).
+- Serialization: `serde` + `serde_json`.
+- Database: `sqlx` (compile-time checked async SQL).
+- Middleware: use `tower` layers.
 
 **Conventions:**
-- `clippy` with no warnings, `rustfmt` for formatting
-- Inline tests in the module with `#[cfg(test)]`
-- Documentation with `///` for public items
-- `Arc<Mutex<T>>` sparingly — design to minimize shared state
-
-**Structure:**
-- `src/main.rs` or `src/lib.rs` as entry point
-- Modules in `src/` organized by domain
-- `Cargo.workspace` for monorepos
+- Zero warnings in `clippy`; auto-format with `rustfmt`.
+- Inline tests: `#[cfg(test)]`.
+- Document public items: `///`.
+- Minimize shared state; use `Arc<Mutex<T>>` sparingly.

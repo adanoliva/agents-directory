@@ -5,27 +5,24 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — MongoDB
+## MongoDB Rules (v7+)
 
-This project uses **MongoDB 7+**.
-
-- Document design driven by access patterns, not relational normalization
-- Embedded vs. referenced: embed when you read the full document most of the time, reference when subdocuments are large or queried independently
-- Indexes: compound indexes with most selective fields first, text indexes for search
-- `explain("executionStats")` to analyze execution plans
+**Design:**
+- Driven by access patterns.
+- Embed for common reads; reference for large/independent subdocs.
+- Indexes: compound (selective fields first), text (search).
+- Analyze via `explain("executionStats")`.
 
 **Aggregation Pipeline:**
-- Preferred over client-side JS for aggregations — processes on the server
-- `$match` and `$project` at the start to reduce documents early
-- `$lookup` for joins — use sparingly (signal that you might need references)
-- `$facet` for multiple aggregations in a single query
+- Prefer over client-side JS.
+- Order: `$match` -> `$project` (early reduction).
+- Use `$lookup` sparingly. Use `$facet` for multiple aggregations.
 
-**Mongoose (if applicable):**
-- Strict schemas with model-level validation
-- Virtuals for computed unpersisted fields
-- Middleware (pre/post hooks) for cross-cutting logic
-- `lean()` on read-only queries for better performance
+**Mongoose:**
+- Use strict schemas and validation.
+- Use Virtuals (computed) and Middleware (hooks).
+- Use `lean()` for read-only queries.
 
-**Best practices:**
-- Appropriate write concerns for durability (`{w: 'majority'}` in production)
-- Multi-document transactions only when strictly necessary (they have a cost)
+**Best Practices:**
+- Write concern: `{w: 'majority'}` in production.
+- Use multi-doc transactions only when essential.

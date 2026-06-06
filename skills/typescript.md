@@ -5,28 +5,19 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — TypeScript (strict mode)
+## TypeScript (Strict)
 
-This project uses **TypeScript** with strict configuration.
-
-**tsconfig.json strict:**
-- `strict: true` enabled (includes `noImplicitAny`, `strictNullChecks`, `strictFunctionTypes`, etc.)
-- `noUncheckedIndexedAccess: true` — array/object access returns `T | undefined`
-- `exactOptionalPropertyTypes: true` — distinguishes between `undefined` and absent property
-
-**Advanced types:**
-- Use `type` for aliases and unions, `interface` for extensible objects
-- `Readonly<T>`, `ReadonlyArray<T>` for immutability
-- Template literal types for typed strings: `` `${string}-${number}` ``
-- `satisfies` operator to validate without changing the inferred type
-- Discriminated unions for exhaustive pattern matching
-
-**No `any`:**
-- `unknown` instead of `any` for unknown types — forces validation before use
-- Type guards: `typeof`, `instanceof`, predicates `(x): x is T`
-- `as` casting only when TypeScript can't infer and you have more information
-
-**Conventions:**
-- Explicit return types on public/exported functions
-- Descriptive generic names: `TEntity` not `T` in complex contexts
-- Enums only when the runtime value matters; otherwise `as const` objects
+- **Config**: Enable `strict`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`.
+- **Typing**:
+  - Use `type` (aliases/unions), `interface` (objects).
+  - Use `Readonly<T>`, `ReadonlyArray<T>`.
+  - Use `satisfies` for validation without narrowing.
+  - Implement Discriminated Unions for matching.
+- **Safety**:
+  - Avoid `any`; use `unknown`.
+  - Use type guards (`typeof`, `instanceof`, `is T`).
+  - Minimal use of `as` casting.
+- **Conventions**:
+  - Explicit return types on public APIs.
+  - Descriptive generic names (`TEntity`).
+  - Prefer `as const` objects over `enums`.

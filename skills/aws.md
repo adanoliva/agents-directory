@@ -5,31 +5,26 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — AWS
+## AWS Rules
 
-This project uses **Amazon Web Services (AWS)**.
-
-**Common services:**
-- **Compute**: EC2, ECS Fargate, Lambda, App Runner
-- **Storage**: S3 (objects), EBS (blocks), EFS (files)
-- **Database**: RDS (relational), DynamoDB (NoSQL), ElastiCache (Redis/Memcached)
-- **Networking**: VPC, ALB/NLB, CloudFront (CDN), Route 53 (DNS)
-- **Messaging**: SQS (queues), SNS (pub/sub), EventBridge (event bus)
-- **CI/CD**: CodePipeline, CodeBuild, ECR (container registries)
+- **Compute**: EC2, ECS Fargate, Lambda, App Runner.
+- **Storage**: S3, EBS, EFS.
+- **DB**: RDS, DynamoDB, ElastiCache.
+- **Network**: VPC, ALB/NLB, CloudFront, Route 53.
+- **Messaging**: SQS, SNS, EventBridge.
+- **CI/CD**: CodePipeline, CodeBuild, ECR.
 
 **Security (IAM):**
-- Least privilege principle in all roles and policies
-- Roles for EC2/Lambda instead of user credentials
-- `aws:PrincipalOrgID` and resource-based policies for cross-account access
-- MFA for human users, not for service accounts
+- Apply **Least Privilege** in all policies.
+- Use Roles for EC2/Lambda; avoid user credentials.
+- Use `aws:PrincipalOrgID` for cross-account access.
+- Require MFA for human users.
 
-**Cost management:**
-- Consistent tags on all resources for cost tracking
-- Reserved Instances or Savings Plans for predictable workloads
-- S3 lifecycle policies to move old objects to Glacier
-- Rightsizing with AWS Compute Optimizer
+**Optimization:**
+- Tag resources for cost tracking.
+- Use S3 lifecycle policies (Glacier).
+- Right-size via AWS Compute Optimizer.
 
-**Infrastructure as code:**
-- **Terraform** or **CDK** (TypeScript/Python) for provisioning
-- **CloudFormation** only if already used in the project
-- No manual changes in production — everything via IaC
+**IaC:**
+- Use **Terraform** or **CDK** (TS/Python).
+- No manual changes in production.

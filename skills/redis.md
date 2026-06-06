@@ -1,29 +1,24 @@
 ---
 name: redis
-description: Redis para caché, sesiones, colas y pub/sub
+description: Redis para caché, sesiones, colas y pub/sub  
 model: sonnet
 tools: []
 ---
 
-## Technology context — Redis
+## Redis Rules (v7+)
 
-This project uses **Redis 7+**.
+**Core Uses:**
+- **Cache**: `SET key value EX ttl`. Always use explicit TTL.
+- **Sessions**: JSON serialization + TTL.
+- **Rate limiting**: `INCR` + `EXPIRE` or sorted sets.
+- **Pub/Sub**: `PUBLISH`/`SUBSCRIBE` (no guaranteed delivery).
+- **Queues**: `RPUSH`/`BLPOP` (simple) or **Redis Streams** (durable).
 
-- **Cache**: `SET key value EX ttl` — always with explicit TTL, never infinite cache without justification
-- **Sessions**: session storage with JSON serialization and TTL aligned with the session
-- **Rate limiting**: `INCR` + `EXPIRE` or sorted sets for sliding windows
-- **Pub/Sub**: `PUBLISH` / `SUBSCRIBE` for real-time notifications — no guaranteed delivery
-- **Queues**: `RPUSH` / `BLPOP` for simple queues; **Redis Streams** for greater durability
+**Structures:**
+- `STRING` (cache/counters), `HASH` (objects), `LIST` (queues), `SET` (unique/M2M), `SORTED SET` (priorities/indexes).
 
-**Data structures:**
-- `STRING`: simple cache, counters
-- `HASH`: partially updatable objects
-- `LIST`: queues, recent activity logs
-- `SET`: unique membership, many-to-many relationships
-- `SORTED SET`: leaderboards, priorities, time-based indexes
-
-**Best practices:**
-- Key namespacing: `service:entity:id` (e.g. `user:session:123`)
-- Avoid `KEYS *` in production — use `SCAN` with cursor
-- Persistence: RDB for snapshots, AOF for greater durability (evaluate the tradeoff)
-- Connection pooling — don't open one connection per request
+**Best Practices:**
+- Namespace keys: `service:entity:id`.
+- Use `SCAN` instead of `KEYS *`.
+- Use connection pooling.
+- Persistence: RDB (snapshots) or AOF (durability).

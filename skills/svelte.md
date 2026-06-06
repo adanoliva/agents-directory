@@ -5,18 +5,20 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Svelte 5
+## Svelte 5 Rules
 
-This project uses **Svelte 5** with the new runes system.
+**Runes System:**
+- `$state()`: reactive state.
+- `$derived()`: computed values.
+- `$effect()`: effects + cleanup.
+- `$props()`: typed component props.
 
-- `$state()` for reactive state (replaces reactive `let` from Svelte 4)
-- `$derived()` for computed values (replaces `$:`)
-- `$effect()` for effects with cleanup (replaces `onMount`/`onDestroy` for reactivity)
-- `$props()` to declare typed component props
-- **SvelteKit** as meta-framework: file-based routing, load functions, form actions
+**SvelteKit:**
+- File-based routing.
+- Use `load` functions and form actions.
 
 **Conventions:**
-- One component per `.svelte` file
-- Svelte stores for shared global state (`writable`, `readable`, `derived`)
-- CSS scoped by default in `<style>` — use `:global()` sparingly
-- TypeScript in `<script lang="ts">`
+- One component per `.svelte` file.
+- Global State: use Svelte stores (`writable`, `readable`, `derived`).
+- Scoped CSS: use `<style>`; use `:global()` sparingly.
+- Use `<script lang="ts">`.

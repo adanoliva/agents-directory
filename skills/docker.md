@@ -5,27 +5,21 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Docker + Compose
-
-This project uses **Docker** with **Docker Compose**.
+## Docker Rules
 
 **Dockerfiles:**
-- Multi-stage builds: separate build stage from final image (smaller size)
-- Non-root user: `USER node` or `USER appuser` before CMD
-- Optimized layers: `COPY package*.json` before source code for dependency caching
-- Complete `.dockerignore`: exclude `node_modules`, `.git`, dev files
-
-**Base images:**
-- Alpine for small images when there are no incompatibilities
-- `distroless` for maximum production security (no shell)
-- Pin exact versions: `node:20.11.0-alpine` not `node:latest`
+- Use **Multi-stage builds** for smaller images.
+- Run as **non-root user** (`USER node`/`appuser`).
+- Optimize layers: `COPY package*.json` before source.
+- Include complete `.dockerignore` (exclude `node_modules`, `.git`).
+- Pin exact versions: `node:20.11.0-alpine` (avoid `latest`).
+- Use `alpine` or `distroless` for security/size.
 
 **Docker Compose:**
-- `compose.yml` (new format, no `version:`) for development environments
-- `healthcheck` on services that others depend on
-- `depends_on` with `condition: service_healthy` for correct startup order
-- Variables in `.env` with documented `.env.example`
+- Use `compose.yml` (no `version:`).
+- Define `healthcheck` and `depends_on` with `condition: service_healthy`.
+- Use `.env` and `.env.example`.
 
-**Networks and volumes:**
-- Named volumes for persistent data, bind mounts for code in development
-- Custom networks to isolate services — don't expose unnecessary ports to the host
+**Networking & Volumes:**
+- Use named volumes for persistence; bind mounts for dev.
+- Isolate services with custom networks.
