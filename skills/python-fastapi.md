@@ -5,25 +5,20 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Python + FastAPI
+## FastAPI Rules (Python 3.11+)
 
-This project uses **FastAPI** with Python 3.11+.
-
-- Async endpoints by default: `async def` for I/O, `def` only for CPU-bound work
-- **Pydantic v2** for request/response schema validation
-- Dependency injection with `Depends()` for: DB sessions, auth, services
-- Type hints throughout — no `Any` without justification
-- SQLAlchemy 2.x with `AsyncSession` for async database operations
+**Core:**
+- Use `async def` for I/O; `def` for CPU-bound tasks.
+- Use **Pydantic v2** for validation.
+- DI: use `Depends()` for DB, auth, and services.
+- Database: **SQLAlchemy 2.x** with `AsyncSession`.
+- Strict typing: no `Any` without justification.
 
 **Structure:**
-- `routers/` to group endpoints by domain
-- `schemas/` for Pydantic request/response models
-- `models/` for SQLAlchemy models
-- `services/` for business logic
-- `dependencies/` for shared dependencies
+- `/routers/` (domain), `/schemas/` (Pydantic), `/models/` (SQLAlchemy), `/services/` (logic).
 
 **Conventions:**
-- Explicit `response_model` on every endpoint
-- HTTP exceptions with `HTTPException(status_code=..., detail=...)`
-- Background tasks with `BackgroundTasks` for non-critical operations
-- Settings with `pydantic-settings` from environment variables
+- Required `response_model` on every endpoint.
+- Use `HTTPException` for errors.
+- Use `BackgroundTasks` for non-critical async work.
+- Use `pydantic-settings` for env config.

@@ -5,31 +5,24 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Kubernetes
+## Kubernetes Rules
 
-This project uses **Kubernetes** (K8s).
+**Core Resources:**
+- `Deployment`: manage Pods (rolling updates, replicas).
+- `Service`: `ClusterIP` (internal), `LoadBalancer` (external).
+- `Ingress`: HTTP routing + TLS.
+- `ConfigMap`/`Secret`: configuration and sensitive data.
+- `HPA`: autoscaling (CPU/RAM).
 
-**Core resources:**
-- `Deployment`: manages Pods with rolling updates, rollback and replicas
-- `Service`: ClusterIP for internal, LoadBalancer for external, NodePort for dev
-- `Ingress`: HTTP/S routing with TLS termination
-- `ConfigMap`: non-sensitive configuration
-- `Secret`: sensitive data (base64 encoded, or better with external-secrets)
-- `HPA`: autoscaling based on CPU/RAM or custom metrics
-
-**Best practices:**
-- Resource requests and limits on all containers — without them the scheduler can't plan correctly
-- Liveness and readiness probes: keep them distinct — readiness controls traffic, liveness controls restart
-- `PodDisruptionBudget` for high availability during cluster upgrades
-- Namespaces for environment isolation (dev/staging/prod)
-- RBAC: least privilege for service accounts
+**Best Practices:**
+- Define **resource requests/limits** for all containers.
+- Use distinct **Liveness** (restart) and **Readiness** (traffic) probes.
+- Use `PodDisruptionBudget` for HA.
+- Isolate environments via **Namespaces**.
+- Apply **RBAC** Least Privilege.
 
 **Helm:**
-- Charts for packaging manifests with variables
-- `values.yaml` for defaults, `values-prod.yaml` for production overrides
-- `helm diff` before `helm upgrade`
+- Package via Charts. Use `values.yaml` and environment overrides.
+- Run `helm diff` before `helm upgrade`.
 
-**Monitoring:**
-- Prometheus + Grafana for metrics
-- Loki for logs
-- `kubectl top pods` for real-time resource usage
+**Monitoring:** Prometheus, Grafana, Loki. Use `kubectl top pods`.

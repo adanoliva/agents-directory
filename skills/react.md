@@ -5,20 +5,19 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — React 18
+## React 18 Rules
 
-This project uses **React 18** with TypeScript.
+**Core:**
+- Use **Functional components** and **hooks** (no classes).
+- State: `useState`, `useReducer` (complex state).
+- Effects: `useEffect` with cleanup and precise dependencies.
+- Memoization: `useMemo`/`useCallback` only when profiling justifies it.
+- Global State: use Context for tree-state; libraries for app-wide data.
+- Concurrent Features: `startTransition`, `Suspense`.
 
-- Functional components with hooks — never classes
-- Local state: `useState`, `useReducer` for complex state
-- Effects: `useEffect` with explicit cleanup, precise dependencies
-- Memoization: `useMemo` and `useCallback` only when the profiler shows a real gain
-- Context for component-tree state; global state library for application-wide data
-- Concurrent features: `startTransition` for non-urgent updates, `Suspense` for async loading
-- `StrictMode` enabled in development
-
-**Preferred patterns:**
-- Composition over prop drilling
-- Custom hooks for reusable logic
-- Error boundaries for fault isolation
-- Fragments when no DOM wrapper is needed
+**Patterns:**
+- **Composition over prop drilling**.
+- Use **Custom hooks** for reusable logic.
+- Use **Error boundaries** for fault isolation.
+- Use **Fragments** to avoid extra DOM nodes.
+- Enable `StrictMode` in development.

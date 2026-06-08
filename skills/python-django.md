@@ -1,27 +1,24 @@
 ---
 name: python-django
-description: Django 5 con DRF, ORM y arquitectura MTV
+description: Django 5 con DRF, ORM y arquitectura MTV      
 model: sonnet
 tools: []
 ---
 
-## Technology context — Python + Django
+## Django 5 Rules (Python 3.11+)
 
-This project uses **Django 5** with Python 3.11+.
-
-- **Django REST Framework (DRF)** for APIs: ViewSets, Serializers, Permissions
-- Django ORM for data access — avoid raw SQL except for performance cases
-- `select_related` and `prefetch_related` to prevent N+1 queries
-- Class-based or function-based views — follow the project convention
-- `settings/` split by environment: `base.py`, `development.py`, `production.py`
+**Framework:**
+- Use **Django REST Framework (DRF)** for APIs.
+- Use **Django ORM**; avoid raw SQL.
+- Prevent N+1: use `select_related` (FK) and `prefetch_related` (M2M).
+- Split settings: `base.py`, `development.py`, `production.py`.
 
 **Conventions:**
-- Modular apps by domain: each app has its own `models`, `views`, `serializers`, `urls`
-- Migrations always created with `makemigrations` — never edit manually
-- `django-environ` or `python-decouple` for environment variables
-- `DEBUG=False` in production, explicit `ALLOWED_HOSTS`
+- Modular apps: `models`, `views`, `serializers`, `urls` per app.
+- Never edit migrations manually; use `makemigrations`.
+- Environment: `django-environ` or `python-decouple`.
+- Production: `DEBUG=False` and explicit `ALLOWED_HOSTS`.
 
 **Testing:**
-- `pytest-django` with `@pytest.mark.django_db` for database tests
-- DRF's `APIClient` for endpoint tests
-- `mixer` or `factory_boy` for test fixtures
+- Use `pytest-django` and `@pytest.mark.django_db`.
+- Use DRF `APIClient` and `factory_boy`/`mixer` for fixtures.

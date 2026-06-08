@@ -1,32 +1,27 @@
 ---
 name: kotlin
-description: Kotlin con Jetpack Compose, Hilt y Coroutines
+description: Kotlin con Jetpack Compose, Hilt y Coroutines 
 model: sonnet
 tools: []
 ---
 
-## Technology context — Kotlin / Jetpack Compose
+## Kotlin & Jetpack Compose Rules
 
-This project uses **Kotlin** with **Jetpack Compose**.
+**Framework:**
+- Use **Jetpack Compose** (declarative UI).
+- Use **Hilt** for DI (`@HiltViewModel`, `@Inject`).
+- Concurrency: **Coroutines + Flow** (`viewModelScope.launch`, `StateFlow`).
+- Use **Navigation Compose** for routing.
 
-- **Jetpack Compose**: declarative UI, composables as functions annotated with `@Composable`
-- **Hilt** for dependency injection — `@HiltViewModel`, `@Inject`, `@Singleton`
-- **Coroutines + Flow**: `viewModelScope.launch`, `StateFlow` for UI state, `SharedFlow` for events
-- **Navigation Compose**: `NavController`, `composable { }` destinations, safe args
-
-**Architecture (MVVM + Repository):**
-- `ViewModel`: exposes `StateFlow<UiState>` and handles `UiEvent`
-- `Repository`: abstracts data sources (API + local database)
-- `Room` for local persistence with typed DAO interfaces
-- `Retrofit` + `OkHttp` for HTTP with interceptors for auth and logging
+**Architecture (MVVM):**
+- `ViewModel`: `StateFlow<UiState>` + `UiEvent`.
+- `Repository`: abstract data (API + local).
+- Use **Room** (local) and **Retrofit** (HTTP).
 
 **Compose:**
-- `remember` and `rememberSaveable` for local state
-- `LaunchedEffect` for side effects with key, `DisposableEffect` for cleanup
-- `LazyColumn` / `LazyRow` for lists with explicit `key`
-- Modifiers chained in order: size → padding → background → clip → clickable
+- State: `remember`, `rememberSaveable`.
+- Effects: `LaunchedEffect` (side effects), `DisposableEffect` (cleanup).
+- Lists: `LazyColumn`/`LazyRow` with explicit `key`.
+- Modifiers order: size -> padding -> background -> clip -> clickable.
 
-**Testing:**
-- `composeTestRule` for composable UI tests
-- `Turbine` for Flow tests
-- `MockK` for idiomatic Kotlin mocking
+**Testing:** `composeTestRule`, `Turbine` (Flow), `MockK`.

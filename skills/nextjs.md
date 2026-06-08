@@ -5,22 +5,14 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Next.js 14 App Router
+## Next.js 14 Rules (App Router)
 
-This project uses **Next.js 14** with the App Router.
-
-- **Server Components** by default — add `"use client"` only when you need interactivity or browser APIs
-- **Server Actions** for data mutations from forms and events
-- `fetch` with cache options: `{ cache: 'force-cache' }`, `{ next: { revalidate: N } }` or `{ cache: 'no-store' }`
-- Nested layouts in `layout.tsx`, loading states in `loading.tsx`, errors in `error.tsx`
-- Metadata API for SEO: `export const metadata` or `generateMetadata()`
-- Image optimization with `next/image`, font optimization with `next/font`
-
-**Routing:**
-- Dynamic routes: `[slug]`, route groups: `(group)`, parallel routes: `@slot`
-- Intercepting routes: `(.)`, `(..)` for modals and overlays
-- Middleware for authentication and redirects
-
-**Data:**
-- Load data directly in Server Components (async/await)
-- `use()` hook to read promises in Client Components
+- Use **Server Components** by default; `"use client"` only for interactivity/browser APIs.
+- Use **Server Actions** for mutations.
+- Data fetching: load directly in Server Components (async/await).
+- Use `fetch` cache options: `force-cache`, `revalidate: N`, `no-store`.
+- Core files: `layout.tsx` (nested layouts), `loading.tsx` (loaders), `error.tsx` (errors).
+- Metadata: use `export const metadata` or `generateMetadata()`.
+- Optimizers: `next/image` and `next/font`.
+- Routing: Dynamic `[slug]`, Groups `(group)`, Parallel `@slot`, Intercepting `(.)`/`(..)`.
+- Use Middleware for auth/redirects.

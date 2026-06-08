@@ -5,35 +5,13 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Unity 6
+## Unity 6
 
-This project uses **Unity 6** with C#.
-
-**Core architecture:**
-- MonoBehaviour components on GameObjects — one responsibility per component
-- `Awake()` for self-initialization, `Start()` for cross-component initialization, `OnEnable`/`OnDisable` for pooled objects
-- `Update()` for frame logic, `FixedUpdate()` for physics, `LateUpdate()` for camera/follow logic
-- Avoid `Find()` and `GetComponent()` in Update — cache references in Awake
-
-**Rendering pipeline:**
-- **URP** (Universal Render Pipeline) for mobile and stylized projects
-- **HDRP** (High Definition) for high-fidelity PC/console projects
-- Shader Graph for custom shaders — avoid hand-written HLSL unless necessary
-- `[SerializeField]` to expose private fields in the Inspector
-
-**Performance:**
-- Object pooling with `ObjectPool<T>` for frequently spawned/destroyed objects
-- `Burst` compiler + `Jobs` system for CPU-intensive parallel work
-- Addressables for runtime asset loading — avoid `Resources.Load` in production
-- Profiler first: measure before optimizing
-
-**Patterns:**
-- ScriptableObjects for shared data and game configuration (no Singletons for data)
-- Events with `UnityEvent` or C# `event Action` to decouple systems
-- State machines with `Animator` for character/object behavior
-- `[CreateAssetMenu]` for designer-friendly asset creation
-
-**Conventions:**
-- C# naming: `PascalCase` for classes and public members, `camelCase` for private fields with `_` prefix
-- Separate gameplay logic from UI logic
-- `Physics.OverlapSphere` / `Physics2D` — never `OnCollisionStay` for continuous checks
+- **Architecture**: MonoBehaviour on GameObjects (single responsibility). Use `Awake` (self-init), `Start` (cross-init), `FixedUpdate` (physics). Cache references in `Awake`; avoid `Find`/`GetComponent` in `Update`.
+- **Rendering**: Use **URP** or **HDRP**. Prefer Shader Graph over HLSL. Use `[SerializeField]` for private fields.
+- **Performance**: Use `ObjectPool<T>`, `Burst` compiler + `Jobs`, Addressables. Profile before optimizing.
+- **Patterns**:
+  - `ScriptableObjects` for shared data (avoid Singletons).
+  - Decouple systems with `UnityEvent` or `Action`.
+  - Use `Animator` for state machines.
+- **Conventions**: PascalCase for public members, _camelCase for private. Decouple gameplay from UI. Use `Physics.OverlapSphere` over `OnCollisionStay`.

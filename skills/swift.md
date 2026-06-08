@@ -5,28 +5,15 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Swift / SwiftUI
+## Swift / SwiftUI
 
-This project uses **Swift 5.9+** with **SwiftUI**.
-
-- **Swift Concurrency**: `async/await`, `Task`, `actor` for concurrent state
-- `@Observable` macro (iOS 17+) or `ObservableObject` + `@Published` for reactive state
-- `@StateObject` for ownership, `@ObservedObject` for references, `@EnvironmentObject` for injection
-- Combine for complex data streams (though Swift Concurrency is gradually replacing it)
-
-**Architecture:**
-- MVVM with ViewModels as `@Observable` classes
-- Views contain no business logic — presentation only
-- Repositories for data source abstraction (network, Core Data, UserDefaults)
-
-**SwiftUI:**
-- Lightweight composable struct views
-- `PreviewProvider` for Xcode canvas previews
-- `LazyVStack` / `LazyHStack` for long lists
-- Environment values for theming and localization
-
-**Best practices:**
-- `Sendable` protocol for types crossing concurrency domains
-- `MainActor` for UI updates from async tasks
-- `@Sendable` closures
-- Avoid `DispatchQueue` directly — use `Task` and `actor`
+- **Swift 5.9+**: Use `async/await`, `Task`, `actor` for concurrency.
+- **State**: Use `@Observable` (iOS 17+) or `ObservableObject` + `@Published`.
+- **Property Wrappers**: Use `@StateObject` (ownership), `@ObservedObject` (reference), `@EnvironmentObject` (injection).
+- **Architecture**: MVVM. ViewModels as `@Observable`. Presentation-only Views. Repositories for data abstraction.
+- **Views**: Composable structs. Use `PreviewProvider` for previews, `LazyVStack`/`LazyHStack` for lists, Environment for themes.
+- **Best Practices**:
+  - Implement `Sendable` for cross-concurrency types.
+  - Apply `@MainActor` for UI updates.
+  - Use `@Sendable` closures.
+  - Prefer `Task`/`actor` over `DispatchQueue`.

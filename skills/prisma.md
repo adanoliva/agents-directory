@@ -5,28 +5,22 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Prisma ORM
+## Prisma Rules
 
-This project uses **Prisma** with TypeScript.
+**Setup:**
+- Schema: `prisma/schema.prisma` (source of truth).
+- CLI: `prisma migrate dev` (dev), `prisma migrate deploy` (prod).
+- Run `prisma generate` after schema changes.
 
-- Schema in `prisma/schema.prisma` — source of truth for the data model
-- `prisma migrate dev` for development migrations, `prisma migrate deploy` in production
-- Auto-generated and fully typed Prisma Client
-- `prisma generate` required after schema changes
+**Usage:**
+- Use a **shared PrismaClient instance** (singleton).
+- Use `$transaction()` (interactive or batch) for atomicity.
+- Use `select` to limit columns; use `include` for relations.
+- Filter with `in` instead of loops.
 
-**Usage patterns:**
-- One shared `PrismaClient` instance (singleton) — don't instantiate per request
-- `$transaction()` for atomic operations: interactive (`$transaction(async (tx) => {...})`) or batch
-- Explicit `select` to avoid over-fetching columns
-- `include` for needed relations, `select` inside `include` for specific columns
-
-**Best practices:**
-- Prisma model names in PascalCase, fields in camelCase — Prisma maps to snake_case in DB
-- `@default(now())` and `@updatedAt` for automatic timestamps
-- Typed Prisma enums in TypeScript code
-- `prisma db seed` with `prisma/seed.ts` for initial data
-
-**Performance:**
-- `findMany` with `take` and `skip` or cursor pagination
-- Avoid queries inside loops — use `findMany` with `in` filter
-- `$connect()` and `$disconnect()` in single-run scripts
+**Best Practices:**
+- PascalCase for models; camelCase for fields.
+- Use `@default(now())` and `@updatedAt`.
+- Use `prisma db seed`.
+- Pagination: use `take` and `skip` or cursor-based.
+- Single-run scripts: call `$connect()` and `$disconnect()`.

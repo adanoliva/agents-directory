@@ -5,27 +5,23 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — Go
+## Go Rules (v1.22+)
 
-This project uses **Go 1.22+**.
+- Handle all errors: `if err != nil`. Never ignore with `_`.
+- Define small interfaces where used.
+- Concurrency: use Goroutines/Channels; `sync.WaitGroup`/`sync.Mutex` for clarity.
+- Propagate `context.Context` as the first argument in I/O functions.
 
-- Errors as values — always handle `if err != nil`, never ignore errors with `_`
-- Small interfaces: define the interface where it's used, not where it's implemented
-- Goroutines and channels for concurrency — `sync.WaitGroup` and `sync.Mutex` when clearer
-- Context propagated through all I/O functions: `context.Context` as the first argument
+**HTTP & API:**
+- Use `net/http` for simple APIs; `chi` or `gin` for routing/middleware.
+- Middleware format: `func(http.Handler) http.Handler`.
 
-**HTTP:**
-- Standard `net/http` for simple APIs
-- `chi` or `gin` for routing with middleware when justified
-- Middleware as `func(http.Handler) http.Handler`
-
-**Project structure:**
-- `/cmd/` for main packages, `/internal/` for private code, `/pkg/` for exportable code
-- One package = one responsibility — avoid packages named `utils` or `helpers`
-- Configuration via environment variables or flags, not complex config files
+**Project Structure:**
+- `/cmd/`: main. `/internal/`: private. `/pkg/`: exportable.
+- One package = one responsibility (avoid `utils`/`helpers`).
+- Use environment variables/flags for config.
 
 **Conventions:**
-- `gofmt` and `golangci-lint` — code is formatted automatically
-- Tests in `*_test.go` alongside the code they test
-- Table-driven tests with `t.Run()`
-- Documentation for exported functions with `// FuncName ...` comment
+- Auto-format with `gofmt` and `golangci-lint`.
+- Tests in `*_test.go` using table-driven patterns (`t.Run()`).
+- Document exported functions: `// FuncName ...`.

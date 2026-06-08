@@ -1,23 +1,18 @@
 ---
 name: angular
-description: Angular 17+ con signals, standalone components y RxJS
+description: Angular 17+ con signals, standalone components
+ y RxJS
 model: sonnet
 tools: []
 ---
 
-## Technology context — Angular 17+
+## Angular 17+ Rules
 
-This project uses **Angular 17+**.
-
-- Standalone components — no `NgModule` for new components
-- **Signals** for reactive local state: `signal()`, `computed()`, `effect()`
-- `inject()` instead of constructor injection where possible
-- RxJS for async streams: prefer pipeable operators, avoid nested subscriptions
-- Mandatory unsubscribe: `takeUntilDestroyed()` or `AsyncPipe` to prevent memory leaks
-- Lazy-loaded routes by default
-- OnPush change detection for presentational components
-
-**Conventions:**
-- Services as singletons via `providedIn: 'root'`
-- Functional guards and resolvers (not classes)
-- Reactive forms (`ReactiveFormsModule`) for complex validation
+- Use Standalone components; avoid `NgModule`.
+- Use **Signals** (`signal()`, `computed()`, `effect()`) for reactive local state.
+- Use `inject()` instead of constructor injection.
+- RxJS: use pipeable operators; avoid nested subscriptions.
+- Prevent memory leaks: use `takeUntilDestroyed()` or `AsyncPipe`.
+- Use Lazy-loaded routes and `OnPush` change detection for presentational components.
+- Services: use `providedIn: 'root'`.
+- Use functional guards/resolvers and `ReactiveFormsModule`.

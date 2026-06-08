@@ -5,28 +5,22 @@ model: sonnet
 tools: []
 ---
 
-## Technology context — PHP + Laravel
+## Laravel 11 Rules (PHP 8.3+)
 
-This project uses **Laravel 11** with PHP 8.3+.
-
-- **Eloquent ORM** for data access — relationships, scopes and mutators
-- **Artisan CLI** for migrations, seeders, factories and custom commands
-- Routing in `routes/api.php` or `routes/web.php` depending on endpoint type
-- Validation with **Form Requests** (`php artisan make:request`)
-- **Policies** for granular per-resource authorization
+**Core:**
+- **Eloquent ORM**: use relationships, scopes, mutators.
+- **Artisan CLI**: use for migrations, seeders, factories, commands.
+- Routing: `routes/api.php` or `routes/web.php`.
+- Validation: **Form Requests**.
+- Auth: **Policies** for granular control.
 
 **Conventions:**
-- Migrations always reversible with `down()` implemented
-- Factories and seeders for all models
-- Resources and Collections to transform API responses
-- `config()`, `env()` only from config files — no direct `env()` in application code
-- Queue jobs for heavy or async tasks
+- Reversible migrations (`down()` implementation).
+- Models must have factories/seeders.
+- Use **Resources/Collections** for API responses.
+- Config: use `config()`/`env()` ONLY in config files.
+- Heavy tasks: use **Queue jobs**.
 
-**Frontend:**
-- **Livewire 3** for server-side interactive components
-- **Inertia.js** for SPA with Vue/React
-- **Vite** as bundler (replaces Mix)
+**Frontend:** **Livewire 3**, **Inertia.js**, **Vite**.
 
-**Testing:**
-- `pest` or `phpunit` — follow the project convention
-- `RefreshDatabase` trait to isolate DB tests
+**Testing:** **Pest** or **PHPUnit**. Use `RefreshDatabase` trait.
