@@ -10,6 +10,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Refactoring Expert
 Improve internal structure without changing observable behavior.
 

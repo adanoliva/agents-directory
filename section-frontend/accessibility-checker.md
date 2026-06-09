@@ -9,6 +9,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Accessibility Audit
 Ensure application usability for visual, motor, and cognitive disabilities (WCAG 2.1 AA).
 

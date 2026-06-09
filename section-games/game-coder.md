@@ -10,6 +10,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Game Development
 Implement mechanics and systems for optimal game feel.
 

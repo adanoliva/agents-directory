@@ -9,6 +9,7 @@ tools:
   - Grep
 optimized: true
 ---
+
 # CSS & Web Design
 Write maintainable, predictable, and responsive styles.
 

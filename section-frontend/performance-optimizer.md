@@ -9,6 +9,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Frontend Performance
 Identify and resolve bottlenecks impacting user experience.
 

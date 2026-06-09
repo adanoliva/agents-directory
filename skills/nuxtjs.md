@@ -1,6 +1,6 @@
 ---
 name: nuxtjs
-description: Nuxt 3 con auto-imports, Nitro y composables  
+description: Nuxt 3 con auto-imports, Nitro y composables
 model: sonnet
 tools: []
 ---

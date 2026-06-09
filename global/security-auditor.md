@@ -8,6 +8,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Security Audit
 Identify exploitable vulnerabilities with evidence-based findings.
 

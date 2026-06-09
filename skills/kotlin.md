@@ -1,6 +1,6 @@
 ---
 name: kotlin
-description: Kotlin con Jetpack Compose, Hilt y Coroutines 
+description: Kotlin con Jetpack Compose, Hilt y Coroutines
 model: sonnet
 tools: []
 ---

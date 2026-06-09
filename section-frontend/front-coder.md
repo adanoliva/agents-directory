@@ -10,6 +10,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Frontend Development
 Implement functional, accessible, and maintainable user interfaces.
 

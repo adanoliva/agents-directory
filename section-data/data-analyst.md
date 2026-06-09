@@ -9,6 +9,7 @@ tools:
   - Grep
 optimized: true
 ---
+
 # Data Analysis
 Extract and communicate actionable insights from data.
 

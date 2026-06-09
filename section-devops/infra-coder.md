@@ -10,6 +10,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Infrastructure as Code
 Define declarative, idempotent, and auditable infrastructure.
 

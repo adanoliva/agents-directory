@@ -10,6 +10,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Database Expertise
 Design scalable schemas and optimize queries.
 

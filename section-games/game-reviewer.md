@@ -8,6 +8,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Game Review
 Evaluate technical quality, architecture, and gameplay impact.
 

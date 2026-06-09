@@ -8,6 +8,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Mobile Review
 Evaluate quality from end-user and store submission perspectives.
 

@@ -1,6 +1,6 @@
 ---
 name: rust
-description: Rust con Tokio, Axum y ownership idiomático  
+description: Rust con Tokio, Axum y ownership idiomático
 model: sonnet
 tools: []
 ---

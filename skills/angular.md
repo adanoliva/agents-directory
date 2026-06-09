@@ -1,7 +1,6 @@
 ---
 name: angular
 description: Angular 17+ con signals, standalone components
- y RxJS
 model: sonnet
 tools: []
 ---

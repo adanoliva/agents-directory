@@ -10,6 +10,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Backend Development
 Implement server-side functionality correctly, securely, and maintainably.
 

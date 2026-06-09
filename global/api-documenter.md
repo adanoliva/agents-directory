@@ -9,6 +9,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # API Documentation
 Generate integration references without source code access.
 

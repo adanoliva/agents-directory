@@ -7,6 +7,7 @@ tools:
   - Read
 optimized: true
 ---
+
 # Git Management
 Generate commits, PRs, and changelogs explaining motivation over implementation.
 

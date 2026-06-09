@@ -10,6 +10,7 @@ tools:
   - Bash
 optimized: true
 ---
+
 # Mobile Development
 Implement fluid, responsive, platform-compliant mobile interfaces.
 

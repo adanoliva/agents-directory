@@ -8,6 +8,7 @@ tools:
   - Grep
 optimized: true
 ---
+
 # Technical Writing
 Produce clear, actionable documentation for developers and users.
 
