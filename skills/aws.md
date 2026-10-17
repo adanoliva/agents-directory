@@ -1,8 +1,6 @@
 ---
 name: aws
 description: AWS con servicios core, IAM least privilege y arquitectura cloud-native
-model: sonnet
-tools: []
 ---
 
 ## AWS Rules

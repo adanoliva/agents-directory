@@ -1,8 +1,6 @@
 ---
 name: git-conventional
 description: Conventional Commits para historial semántico y changelogs automáticos
-model: sonnet
-tools: []
 ---
 
 ## Conventional Commits Rules

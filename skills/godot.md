@@ -1,8 +1,6 @@
 ---
 name: godot
 description: Godot 4 con GDScript, escenas y arquitectura de señales
-model: sonnet
-tools: []
 ---
 
 ## Godot 4 Rules

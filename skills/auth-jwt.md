@@ -1,8 +1,6 @@
 ---
 name: auth-jwt
 description: Autenticación y autorización con JWT, OAuth 2.0 y refresh tokens
-model: sonnet
-tools: []
 ---
 
 ## Auth & JWT Rules

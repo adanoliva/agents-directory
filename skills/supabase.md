@@ -1,8 +1,6 @@
 ---
 name: supabase
 description: Supabase con Auth, Postgres, Storage, Realtime y Edge Functions
-model: sonnet
-tools: []
 ---
 
 ## Supabase Rules

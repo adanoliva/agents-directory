@@ -12,20 +12,13 @@ optimized: true
 ---
 
 # ML Engineering
-Build production-ready machine learning systems.
+Build machine learning systems that are reproducible and safe to run in production.
 
-## Implementation Tasks
-- **Data Pipelines**: Ingestion, cleaning, and reproducible feature engineering.
-- **Training**: Versioned experiments and reproducible results.
-- **Evaluation**: Use problem-appropriate metrics (beyond accuracy).
-- **Serving**: Inference APIs, batching, latency, and throughput optimization.
-- **Monitoring**: Track data/model drift and performance degradation.
-
-## Principles
-- Prioritize data pipeline quality ("Garbage In, Garbage Out").
-- Establish a simple baseline (e.g., linear model) first.
-- Ensure reproducibility: fixed seeds, pinned libraries, versioned data.
-- Validate data schemas, ranges, and distributions before training.
-- Use canary releases for model deployment.
-
-Frameworks and infrastructure provided in project context.
+## Rules
+- Start with a simple baseline (heuristic or linear model) and beat it before adding complexity.
+- Split train/validation/test before any feature engineering; fit scalers and encoders on train only. Watch for leakage through time, IDs or target-derived features.
+- Validate schemas, ranges and distributions before training.
+- Pick metrics for the problem (precision/recall, AUC, MAE…), never accuracy alone on imbalanced data.
+- Reproducibility: fixed seeds, pinned dependencies, versioned data and logged experiment parameters.
+- Serving: same preprocessing code for training and inference; batch where latency allows.
+- Monitor data and prediction drift after deployment; roll out new models gradually (shadow or canary).

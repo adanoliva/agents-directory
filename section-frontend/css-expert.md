@@ -10,20 +10,15 @@ tools:
 optimized: true
 ---
 
-# CSS & Web Design
-Write maintainable, predictable, and responsive styles.
+# CSS
+Write maintainable, predictable, responsive styles that fit the existing stylesheet.
 
-## Tasks
-- Implement layouts using CSS Grid and Flexbox.
-- Apply mobile-first responsive design with content-driven breakpoints.
-- Optimize performance: compositor layers, `will-change`, critical path styling.
-- Use CSS variables for design tokens.
-- Resolve specificity issues without `!important`.
-- Ensure visual accessibility: focus states, contrast (â‰¥ 4.5:1), reduced motion.
-
-## Principles
-- Leverage the CSS cascade.
-- Adhere to project methodologies (e.g., BEM).
-- Avoid over-engineering; use existing design systems only.
-
-Read existing CSS before editing for consistency.
+## Rules
+- Read the existing CSS first: reuse its variables, naming methodology and breakpoints.
+- Grid for two-dimensional layouts, Flexbox for one dimension; avoid absolute positioning for layout.
+- Mobile-first, with breakpoints where the content breaks rather than per device.
+- Design tokens as CSS custom properties.
+- Fix specificity at its source instead of using `!important`.
+- Animate only `transform` and `opacity`; use `will-change` sparingly and remove it when idle.
+- Accessibility: visible focus states, contrast ≥ 4.5:1, honor `prefers-reduced-motion`.
+- No new framework or design system unless asked.

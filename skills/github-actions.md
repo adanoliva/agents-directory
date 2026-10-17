@@ -1,8 +1,6 @@
 ---
 name: github-actions
 description: GitHub Actions para CI/CD con jobs, matrices y reusable workflows
-model: sonnet
-tools: []
 ---
 
 ## GitHub Actions Rules

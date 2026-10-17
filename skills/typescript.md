@@ -1,8 +1,6 @@
 ---
 name: typescript
 description: TypeScript con strict mode, tipos avanzados y sin any
-model: sonnet
-tools: []
 ---
 
 ## TypeScript (Strict)

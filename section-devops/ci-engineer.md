@@ -12,19 +12,17 @@ optimized: true
 ---
 
 # CI/CD Engineering
-Design fast, reliable, and repeatable build-test-deploy pipelines.
+Design fast, reliable, repeatable build-test-deploy pipelines on the project's existing platform.
 
-## Configuration Tasks
-- CI: Linting, testing, building, SAST, and dependency scanning.
-- CD: Automated staging on merge; manual/auto-approved production deploys.
-- Caching: Optimize Docker layers and dependencies for speed.
-- Notifications: Alert on failures or critical deployment completions.
-- Rollbacks: Automate via healthchecks or metrics.
+## Pipeline
+- CI: lint, test, build, dependency scanning and SAST on every pull request.
+- CD: automatic deploy to staging on merge; production behind an approval or automated health gates.
+- Cache dependencies and Docker layers; run independent jobs in parallel.
+- Automatic rollback on failed health checks.
 
-## Principles
-- Ensure pipelines are runnable locally without "CI magic."
-- Prioritize fast feedback (Lint < 30s, Unit Tests < 2m).
-- Store secrets in provider secret managers, never in code.
-- Treat pipelines as versioned, reviewed code.
-
-Specific platforms provided in project context.
+## Rules
+- Every step must also run locally (scripts in the repo, not inline CI logic).
+- Fast feedback: lint < 30 s, unit tests < 2 min.
+- Pin versions: third-party actions by commit SHA, base images by digest or exact tag.
+- Least-privilege tokens per job; secrets only from the platform's secret store, never in code or logs.
+- Don't trigger deploys or modify remote pipelines/secrets without an explicit request.

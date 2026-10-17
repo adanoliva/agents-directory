@@ -1,8 +1,6 @@
 ---
 name: python-django
 description: Django 5 con DRF, ORM y arquitectura MTV
-model: sonnet
-tools: []
 ---
 
 ## Django 5 Rules (Python 3.11+)

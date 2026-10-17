@@ -1,8 +1,6 @@
 ---
 name: testing-jest
 description: Jest con Testing Library para tests unitarios y de componentes
-model: sonnet
-tools: []
 ---
 
 ## Jest / Testing Library

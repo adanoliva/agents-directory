@@ -1,8 +1,6 @@
 ---
 name: cypress
 description: Cypress para tests E2E y de componentes con buenas prácticas
-model: sonnet
-tools: []
 ---
 
 ## Cypress Rules

@@ -1,8 +1,6 @@
 ---
 name: owasp
 description: OWASP Top 10 — prevención de vulnerabilidades web más críticas
-model: sonnet
-tools: []
 ---
 
 ## OWASP Security Rules

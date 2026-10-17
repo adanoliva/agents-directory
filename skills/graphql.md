@@ -1,8 +1,6 @@
 ---
 name: graphql
 description: GraphQL API con schema-first o code-first, resolvers y DataLoader
-model: sonnet
-tools: []
 ---
 
 ## GraphQL Rules

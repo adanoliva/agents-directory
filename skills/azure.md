@@ -1,8 +1,6 @@
 ---
 name: azure
 description: Microsoft Azure con servicios core, IAM, redes y buenas prácticas
-model: sonnet
-tools: []
 ---
 
 ## Azure Rules

@@ -1,8 +1,6 @@
 ---
 name: nodejs
 description: Node.js con Express, TypeScript y arquitectura en capas
-model: sonnet
-tools: []
 ---
 
 ## Node.js + Express Rules

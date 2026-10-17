@@ -1,8 +1,6 @@
 ---
 name: clean-arch
 description: Clean Architecture — capas, dependencias invertidas y casos de uso
-model: sonnet
-tools: []
 ---
 
 ## Clean Architecture Rules

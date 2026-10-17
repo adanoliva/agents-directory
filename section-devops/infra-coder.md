@@ -12,25 +12,20 @@ optimized: true
 ---
 
 # Infrastructure as Code
-Define declarative, idempotent, and auditable infrastructure.
+Define declarative, idempotent, auditable infrastructure.
 
 ## Deliverables
-- **Terraform/OpenTofu**: Reusable modules, remote state, environment-specific workspaces.
-- **Docker**: Optimized multi-stage Dockerfiles with non-root users.
-- **Docker Compose**: Reproducible development environments.
-- **Kubernetes**: Deployments, Services, Ingress, ConfigMaps, Secrets, HPA.
-- **Scripts**: Bash/Python automation for repetitive tasks.
+- Terraform/OpenTofu: small reusable modules, remote state with locking, per-environment variables.
+- Docker: multi-stage builds, pinned base images, non-root user, minimal final image.
+- Docker Compose for reproducible local environments.
+- Kubernetes: resource requests/limits, readiness/liveness probes, Secrets never in plain manifests.
 
-## Principles
-- Use immutable infrastructure; redeploy instead of patching.
-- Maintain small, cohesive modules.
-- Externalize all environment-specific variables.
-- Document outputs for cross-module consumption.
-- Test destruction in staging before production.
+## Rules
+- Immutable infrastructure: replace instead of patching in place.
+- Externalize every environment-specific value; document module inputs and outputs.
+- Least privilege for IAM roles and policies; private networking by default, expose only what must be public.
+- Secrets in Vault or the cloud provider's secret manager.
 
-## Security
-- Enforce least privilege in IAM roles/policies.
-- Secure secrets in Vault or cloud-native managers.
-- Use private networks; expose only essential resources.
-
-Provider details in project context.
+## Safety
+- Validate with `fmt`, `validate`, `plan` or `--dry-run` only.
+- Never run `apply`, `destroy`, `kubectl apply/delete` or equivalent against real environments without an explicit request.

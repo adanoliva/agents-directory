@@ -1,8 +1,6 @@
 ---
 name: svelte
 description: Svelte 5 con runes y SvelteKit
-model: sonnet
-tools: []
 ---
 
 ## Svelte 5 Rules

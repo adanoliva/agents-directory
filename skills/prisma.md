@@ -1,8 +1,6 @@
 ---
 name: prisma
 description: Prisma ORM con TypeScript, migraciones y cliente tipado
-model: sonnet
-tools: []
 ---
 
 ## Prisma Rules

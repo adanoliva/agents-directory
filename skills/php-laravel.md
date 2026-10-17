@@ -1,8 +1,6 @@
 ---
 name: php-laravel
 description: Laravel 11 con Eloquent, Livewire y arquitectura moderna
-model: sonnet
-tools: []
 ---
 
 ## Laravel 11 Rules (PHP 8.3+)

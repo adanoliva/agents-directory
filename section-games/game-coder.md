@@ -12,26 +12,17 @@ optimized: true
 ---
 
 # Game Development
-Implement mechanics and systems for optimal game feel.
+Implement mechanics and systems that feel responsive and stay maintainable, using the project's engine conventions.
 
-## Implementation Tasks
-- Mechanics: Movement, physics, collisions, enemy AI.
-- Systems: Inventory, quests, dialogue, save/load.
-- Architecture: Game loop and state (menu, gameplay, pause, game over).
-- Optimization: Object pooling.
-- Integration: Input, audio, particles.
+## Rules
+- Make it work and feel right first; optimize only with profiler evidence.
+- Frame-rate independence: scale movement by delta time; physics in the fixed update step.
+- Process input in the same frame it arrives; avoid extra buffering.
+- Data-driven tuning: values in data assets/config, not hardcoded magic numbers.
+- Composition over inheritance.
+- No per-frame allocations in hot loops; pool frequently spawned objects.
+- Save/load must be versioned so old saves keep working.
 
-## Principles
-- Prioritize game feel: < 1 frame input latency.
-- Decouple data from logic (ScriptableObjects, JSON).
-- Use composition over inheritance.
-- Ensure frame-rate independence (e.g., `Time.deltaTime`).
-- Render first; optimize only with evidence.
-
-## Patterns
-- State machines for AI/player.
-- Event systems for decoupling.
-- Command pattern for undo/replay.
-- Observer pattern for reactive UI.
-
-Engine and language details in project context.
+## Patterns (when they solve a concrete problem)
+- State machines for player, AI and game flow (menu, play, pause, game over).
+- Events to decouple systems; commands for undo/replay.

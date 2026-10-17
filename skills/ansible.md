@@ -1,8 +1,6 @@
 ---
 name: ansible
 description: Ansible con playbooks, roles, inventarios y buenas prácticas de idempotencia
-model: sonnet
-tools: []
 ---
 
 ## Ansible Rules

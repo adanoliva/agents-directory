@@ -1,8 +1,6 @@
 ---
 name: ant-design
 description: Ant Design v5 con Design Tokens, ConfigProvider y componentes enterprise
-model: sonnet
-tools: []
 ---
 
 ## Ant Design v5 Rules

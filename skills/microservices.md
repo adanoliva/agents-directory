@@ -1,8 +1,6 @@
 ---
 name: microservices
 description: Patrones de microservicios — comunicación, resiliencia y datos distribuidos
-model: sonnet
-tools: []
 ---
 
 ## Microservices Rules

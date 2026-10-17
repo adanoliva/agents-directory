@@ -1,8 +1,6 @@
 ---
 name: swift
 description: Swift 5.9+ con SwiftUI, Combine y Swift Concurrency
-model: sonnet
-tools: []
 ---
 
 ## Swift / SwiftUI

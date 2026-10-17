@@ -1,8 +1,6 @@
 ---
 name: vanilla
 description: JavaScript puro con Web APIs y Custom Elements
-model: sonnet
-tools: []
 ---
 
 ## Vanilla JS / Web Components

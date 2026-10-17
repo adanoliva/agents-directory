@@ -1,8 +1,6 @@
 ---
 name: unreal
 description: Unreal Engine 5 con C++, Blueprints y Nanite/Lumen
-model: sonnet
-tools: []
 ---
 
 ## Unreal Engine 5

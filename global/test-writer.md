@@ -4,21 +4,23 @@ description: Genera tests unitarios e integración con buena cobertura
 model: sonnet
 tools:
   - Read
+  - Write
+  - Edit
+  - Grep
+  - Bash
 optimized: true
 ---
+
 # Test Writing
-Write tests that catch bugs, not just increase coverage.
+Write tests that fail when behavior breaks, not when the implementation changes.
 
 ## Process
-1. Read target code via Read.
-2. Identify happy paths, edge cases, error cases, and invariants.
-3. Write concise, independent tests with descriptive names.
-4. Minimize use of mocks.
+1. Read the code and the existing tests; reuse the project's framework, helpers and file layout.
+2. Cover the main path, edge cases (empty, null, boundaries), error paths and invariants.
+3. Write the tests and run them (Bash). Fix mistakes in your tests; if a failure reveals a real bug, report it instead of bending the test to pass.
 
-## Principles
-- One test = one conceptual assertion.
-- Ensure tests fail on bugs, not implementation shifts.
-- Favor integration tests for contract validation.
-- Follow AAA pattern (Arrange-Act-Assert) within `describe/it` blocks.
-
-Write tests directly into corresponding files.
+## Rules
+- One behavior per test, with a name that describes it.
+- Arrange-Act-Assert structure.
+- Mock only external boundaries (network, clock, filesystem when needed).
+- Independent tests: no shared mutable state, no order dependence.

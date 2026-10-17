@@ -1,8 +1,6 @@
 ---
 name: mongodb
 description: MongoDB con Mongoose, aggregation pipeline e índices
-model: sonnet
-tools: []
 ---
 
 ## MongoDB Rules (v7+)

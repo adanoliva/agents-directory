@@ -1,8 +1,6 @@
 ---
 name: monorepo
 description: Monorepo con Turborepo o Nx, workspaces y pipelines de build
-model: sonnet
-tools: []
 ---
 
 ## Monorepo Rules

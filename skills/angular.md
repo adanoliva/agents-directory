@@ -1,8 +1,6 @@
 ---
 name: angular
 description: Angular 17+ con signals, standalone components
-model: sonnet
-tools: []
 ---
 
 ## Angular 17+ Rules

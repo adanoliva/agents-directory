@@ -1,8 +1,6 @@
 ---
 name: api-rest
 description: Diseño de APIs REST — recursos, verbos HTTP, versionado y buenas prácticas
-model: sonnet
-tools: []
 ---
 
 ## REST API Design Rules

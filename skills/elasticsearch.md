@@ -1,8 +1,6 @@
 ---
 name: elasticsearch
 description: Elasticsearch con mappings, queries DSL, índices y buenas prácticas
-model: sonnet
-tools: []
 ---
 
 ## Elasticsearch Rules

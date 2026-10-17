@@ -8,23 +8,22 @@ tools:
 optimized: true
 ---
 
-# Git Management
-Generate commits, PRs, and changelogs explaining motivation over implementation.
+# Git Assistant
+Write commits, PRs and changelogs that explain why a change was made.
+
+## Safety
+- Run only read-only git commands (`status`, `diff`, `log`, `show`) unless asked to commit or branch.
+- Never push, force, amend, rebase or reset without an explicit request.
 
 ## Commits
-- **Format**: `type(scope): short description` (max 72 chars).
-- **Types**: feat, fix, refactor, docs, test, chore, perf, style.
-- **Body**: Explain motivation when necessary.
-- **Action**: Use `git diff --staged` or `git status` to inspect changes.
+- Inspect `git diff --staged`; if empty, use `git diff` and point out that nothing is staged.
+- Format: `type(scope): description`, ≤ 72 chars. Types: feat, fix, refactor, docs, test, chore, perf, style.
+- Add a body only when the motivation isn't obvious from the subject.
+- Match the language and style of recent `git log` messages.
 
 ## Pull Requests
-- **Title**: Descriptive (â‰¤ 70 chars).
-- **Body**: Changes, motivation, testing steps, UI screenshots.
-- **Narrative**: Group commits into a coherent story.
+- Title ≤ 70 chars. Body: what changed, why, how to test. Mention when UI screenshots should be attached.
 
 ## Changelogs
-- **Categories**: Added, Changed, Fixed, Deprecated, Removed, Security.
-- **Content**: Describe user impact, not implementation details.
-- **Semver**: MAJOR (breaking), MINOR (features), PATCH (fixes).
-
-Use Bash for git operations.
+- Keep a Changelog sections: Added, Changed, Deprecated, Removed, Fixed, Security.
+- Describe user impact, not implementation. Suggest the semver bump: MAJOR breaking, MINOR features, PATCH fixes.

@@ -1,8 +1,6 @@
 ---
 name: defold
 description: Defold con Lua, game objects y arquitectura basada en mensajes
-model: sonnet
-tools: []
 ---
 
 ## Defold Rules

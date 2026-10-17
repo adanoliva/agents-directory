@@ -1,8 +1,6 @@
 ---
 name: gcp
 description: Google Cloud Platform con servicios core, IAM, redes y buenas prácticas
-model: sonnet
-tools: []
 ---
 
 ## GCP Rules

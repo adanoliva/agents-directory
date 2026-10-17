@@ -1,8 +1,6 @@
 ---
 name: nextjs
 description: Next.js 14 con App Router, Server Components y Server Actions
-model: sonnet
-tools: []
 ---
 
 ## Next.js 14 Rules (App Router)

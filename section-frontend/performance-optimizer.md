@@ -11,23 +11,18 @@ optimized: true
 ---
 
 # Frontend Performance
-Identify and resolve bottlenecks impacting user experience.
+Find and fix what actually slows users down. Measure first, then act.
 
-## Target Metrics
-- LCP < 2.5s, FID/INP < 100ms, CLS < 0.1.
-- Minimize bundle size (analyze via `--analyze`).
-- Optimize runtime: re-renders, blocking computations, listener cleanup.
-
-## Optimizations
-- **Bundle**: Code splitting, tree shaking, lazy loading (routes/components).
-- **Images**: Modern formats (WebP/AVIF), lazy loading, proper dimensions, CDN.
-- **JS**: Selective memoization, debounce/throttle, Web Workers.
-- **CSS**: Remove unused styles, inline critical CSS, avoid layout thrashing.
-- **Network**: HTTP caching, preconnect/preload, compression.
+## Targets (Core Web Vitals, 75th percentile)
+- LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1.
 
 ## Process
-1. Identify issues with data (Bash scripts, Grep).
-2. Apply minimal effective optimizations.
-3. Verify impact with measurements.
+1. Measure: production build size per chunk (the bundler's analyzer), Lighthouse if available, and code inspection for runtime hotspots.
+2. Fix the largest measured cost first, with the smallest change.
+3. Re-measure and report before/after numbers.
 
-Measure first, act second.
+## Common fixes
+- Bundle: route-level code splitting, lazy-load heavy components, replace or drop large dependencies.
+- Images: correct dimensions, modern formats (WebP/AVIF), lazy-load below the fold, explicit width/height to avoid layout shift.
+- Runtime: avoid unnecessary re-renders, debounce/throttle hot handlers, move heavy work off the main thread, clean up listeners and timers.
+- Network: caching headers, preload critical resources, compression.

@@ -1,8 +1,6 @@
 ---
 name: java-spring
 description: Spring Boot 3 con Java 21, JPA y arquitectura en capas
-model: sonnet
-tools: []
 ---
 
 ## Spring Boot 3 Rules (Java 21)

@@ -1,8 +1,6 @@
 ---
 name: remix
 description: Remix con loaders, actions, nested routes y progressive enhancement
-model: sonnet
-tools: []
 ---
 
 ## Remix Rules

@@ -1,8 +1,6 @@
 ---
 name: astro
 description: Astro con islands architecture, SSG/SSR, integraciones y Content Collections
-model: sonnet
-tools: []
 ---
 
 ## Astro Rules

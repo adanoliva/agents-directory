@@ -1,8 +1,6 @@
 ---
 name: postgresql
 description: PostgreSQL con índices, JSONB, full-text search y optimización
-model: sonnet
-tools: []
 ---
 
 ## PostgreSQL Rules (v15+)

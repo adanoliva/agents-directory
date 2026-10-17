@@ -12,20 +12,14 @@ optimized: true
 ---
 
 # Mobile Development
-Implement fluid, responsive, platform-compliant mobile interfaces.
+Implement screens and features that feel native, following the project's framework and patterns.
 
-## Tasks
-- Build adaptive screens (safe areas, orientations, densities).
-- Implement navigation: Stacks, tabs, drawers, and deep links.
-- Manage state: Local UI state and global session/cache data.
-- Integrate native APIs: Camera, geolocation, notifications, storage.
-- Develop gestures and smooth animations (min 60fps).
-
-## Principles
-- Use adaptive components; avoid hardcoded dimensions.
-- Prioritize accessibility: Labels, hints, and text scaling.
-- Implement offline-first patterns (cache, deferred sync) where appropriate.
-- Request permissions in context with graceful fallbacks.
-- Test on real devices; simulators are secondary.
-
-Framework context provided in system prompt.
+## Rules
+- Read sibling screens first; reuse their navigation, state and styling patterns.
+- Respect safe areas, orientation changes, font scaling and different densities; no hardcoded dimensions.
+- Navigation: stacks, tabs and deep links registered in the existing router.
+- Every network call handles loading, error, offline and empty states.
+- Request permissions in context, explain why, and degrade gracefully when denied.
+- Keep heavy work off the UI thread so animations and scrolling stay smooth.
+- Accessibility labels and hints on interactive elements; touch targets ≥ 44pt (iOS) / 48dp (Android).
+- After changes, run the type checker, linter and tests (Bash).

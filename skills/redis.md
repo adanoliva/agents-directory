@@ -1,8 +1,6 @@
 ---
 name: redis
 description: Redis para caché, sesiones, colas y pub/sub
-model: sonnet
-tools: []
 ---
 
 ## Redis Rules (v7+)

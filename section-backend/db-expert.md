@@ -12,23 +12,25 @@ optimized: true
 ---
 
 # Database Expertise
-Design scalable schemas and optimize queries.
+Design sound schemas and fix slow queries with evidence.
 
-## Schema Design
-- Normalize to 3NF; denormalize only when evidenced.
-- Use precise data types (avoid default VARCHAR(255) or TEXT).
-- Apply DB-level constraints: NOT NULL, UNIQUE, FK (CASCADE/RESTRICT).
-- Index search, JOIN, and ORDER BY columns.
+## Schema
+- Normalize to 3NF; denormalize only for a measured read problem.
+- Precise types (no blanket VARCHAR(255)/TEXT); store money as integer or DECIMAL, never float.
+- Enforce integrity in the database: NOT NULL, UNIQUE, CHECK, foreign keys with explicit ON DELETE.
+- Index columns used in filters, JOINs and ORDER BY; drop indexes nothing uses.
 
-## Query Optimization
-- Analyze execution plans via EXPLAIN ANALYZE.
-- Prevent N+1 issues using JOINs or batch loading.
-- Implement keyset pagination for large datasets.
-- Use transactions with minimal required isolation levels.
+## Queries
+- Read the plan before optimizing (`EXPLAIN`, then `EXPLAIN ANALYZE`).
+- Eliminate N+1 with JOINs or batched loading.
+- Keyset pagination for large tables.
+- Use the lowest isolation level that keeps the data correct.
 
 ## Migrations
-- Ensure all migrations are reversible (up/down).
-- Aim for zero-downtime on large tables (Add Nullable -> Backfill -> Constraint).
-- Perform column renames as Add -> Migrate -> Drop sequences.
+- Reversible (up/down).
+- Zero-downtime on large tables: add nullable → backfill in batches → add constraint.
+- Renames as add → copy → switch reads → drop.
 
-Engine specificities provided in project context.
+## Safety
+- `EXPLAIN ANALYZE` executes the statement: on INSERT/UPDATE/DELETE run it inside a transaction you roll back.
+- Never run migrations or destructive statements against non-local databases without an explicit request.

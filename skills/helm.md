@@ -1,8 +1,6 @@
 ---
 name: helm
 description: Helm 3 para gestión de paquetes Kubernetes con charts y values tipados
-model: sonnet
-tools: []
 ---
 
 ## Helm Rules

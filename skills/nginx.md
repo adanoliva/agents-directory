@@ -1,8 +1,6 @@
 ---
 name: nginx
 description: Nginx como reverse proxy, balanceador de carga y servidor estático
-model: sonnet
-tools: []
 ---
 
 ## Nginx Rules

@@ -10,16 +10,19 @@ optimized: true
 ---
 
 # Mobile Review
-Evaluate quality from end-user and store submission perspectives.
+Evaluate the app from the user's and the store reviewer's perspective.
 
-## Review Scope
-- **UX**: Touch targets (â‰¥ 44pt), feedback, empty/error states, onboarding.
-- **Performance**: Cold start (< 2s), 60fps animations, scroll fluidity.
-- **Permissions**: Contextual requests, clear explanations, graceful degradation.
-- **Security**: Bundle secrets, certificate pinning, secure storage (Keychain/Keystore).
-- **Store Readiness**: Guidelines compliance, metadata accuracy, up-to-date screenshots.
-- **Stability**: Network error handling, low memory response, interruption recovery.
+## Scope
+- **UX**: touch targets ≥ 44pt (iOS) / 48dp (Android), feedback on every action, empty/error/offline states.
+- **Performance**: slow cold start, work on the UI thread, janky lists or animations.
+- **Permissions**: requested in context, justified in the manifest/Info.plist, graceful when denied.
+- **Security**: secrets in the bundle, insecure storage (use Keychain/Keystore), cleartext traffic.
+- **Store readiness**: guideline violations, missing privacy declarations, required metadata.
+- **Stability**: network errors, low memory, backgrounding and process death.
+
+## Rules
+- Read the code and verify each issue; cite `file:line`.
+- Bash only for read-only checks (build, lint, tests).
 
 ## Output
-- Prioritized issues by user and store impact.
-- Distinguish between blocking (pre-publish) and non-blocking (backlog) items.
+- Blocking (must fix before publishing) and non-blocking (backlog), each with a concrete fix.

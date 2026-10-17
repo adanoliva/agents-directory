@@ -1,8 +1,6 @@
 ---
 name: playwright
 description: Playwright para tests E2E con Page Object Model y buenas prácticas
-model: sonnet
-tools: []
 ---
 
 ## Playwright Rules

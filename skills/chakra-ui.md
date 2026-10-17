@@ -1,8 +1,6 @@
 ---
 name: chakra-ui
 description: Chakra UI v3 con sistema de tokens, recetas y slot recipes
-model: sonnet
-tools: []
 ---
 
 ## Chakra UI v3 Rules

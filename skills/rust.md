@@ -1,8 +1,6 @@
 ---
 name: rust
 description: Rust con Tokio, Axum y ownership idiomático
-model: sonnet
-tools: []
 ---
 
 ## Rust Rules (2021 Edition)

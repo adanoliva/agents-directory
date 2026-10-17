@@ -1,8 +1,6 @@
 ---
 name: fastify
 description: Fastify con TypeScript, plugins, schemas JSON y validación nativa
-model: sonnet
-tools: []
 ---
 
 ## Fastify Rules

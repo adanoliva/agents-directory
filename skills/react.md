@@ -1,8 +1,6 @@
 ---
 name: react
 description: React 18 con TypeScript, hooks y patrones modernos
-model: sonnet
-tools: []
 ---
 
 ## React 18 Rules

@@ -1,8 +1,6 @@
 ---
 name: react-native
 description: React Native con Expo SDK, Expo Router y Reanimated
-model: sonnet
-tools: []
 ---
 
 ## React Native & Expo Rules (v51+)

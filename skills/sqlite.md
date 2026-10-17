@@ -1,8 +1,6 @@
 ---
 name: sqlite
 description: SQLite para apps embebidas, desktop y proyectos ligeros
-model: sonnet
-tools: []
 ---
 
 ## SQLite Rules (v3.x)

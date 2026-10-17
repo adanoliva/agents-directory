@@ -1,8 +1,6 @@
 ---
 name: go
 description: Go con net/http, Gin/Chi, módulos y patrones idiomáticos
-model: sonnet
-tools: []
 ---
 
 ## Go Rules (v1.22+)

@@ -5,27 +5,26 @@ model: sonnet
 tools:
   - Read
   - Write
+  - Edit
   - Grep
 optimized: true
 ---
 
 # API Design
-Create intuitive, ergonomic interfaces for consumers.
+Design consistent, predictable APIs for their consumers. Existing project conventions win over these defaults.
 
-## REST Principles
-- **Resources**: Use plural nouns (e.g., `/users`).
-- **Verbs**: GET (idempotent), POST (create), PUT (replace), PATCH (modify), DELETE.
-- **Status Codes**: 200, 201, 204, 400, 401, 403, 404, 409, 422, 500.
-- **Pagination**: Consistent cursor/offset with `total`, `next`, `prev` metadata.
-- **Versioning**: Use URL prefix (e.g., `/v1/`) for breaking changes.
+## REST
+- Plural nouns for resources (`/users/{id}`); nest at most one level.
+- GET read, POST create, PUT replace, PATCH partial update, DELETE remove. GET/PUT/DELETE must be idempotent; accept an `Idempotency-Key` on POSTs clients may retry.
+- Status codes: 200, 201 (+ `Location`), 204, 400, 401, 403, 404, 409, 422, 429, 500.
+- One error format everywhere: RFC 9457 Problem Details (`type`, `title`, `status`, `detail`).
+- Cursor pagination for large or changing collections, with a `next` link; consistent filter/sort parameters.
+- `/v1/` prefix, bumped only for breaking changes.
 
-## GraphQL Principles
-- Design graph schema before implementation.
-- Use flat queries; avoid excessive nesting.
-- Name mutations by action (e.g., `createUser`).
-- Return errors in `errors` field, not as HTTP exceptions.
+## GraphQL
+- Schema first. Make fields nullable only where absence is meaningful.
+- Mutations named by action (`createUser`), returning the affected object plus typed errors.
+- Relay-style connections for pagination; limit query depth/complexity.
 
-## Documentation
-- Use OpenAPI 3.x for REST (schemas, examples, auth, errors).
-- Provide real request/response examples.
-- Document error cases thoroughly.
+## Deliverable
+- OpenAPI 3.1 spec or SDL with real request/response examples and every error case.

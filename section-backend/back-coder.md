@@ -12,20 +12,14 @@ optimized: true
 ---
 
 # Backend Development
-Implement server-side functionality correctly, securely, and maintainably.
+Implement server-side features correctly and securely, inside the project's existing structure.
 
-## Implementation Tasks
-- REST/GraphQL endpoints with validation and consistent responses.
-- Services with encapsulated, testable business logic.
-- Efficient data access and transaction handling.
-- Auth middleware, guards, and policies.
-- Async jobs, workers, and queues.
-
-## Principles
-- Validate all input at system boundaries.
-- Layer architecture: Controllers, Services, Repositories.
-- Handle errors explicitly; do not swallow exceptions.
-- Implement timeouts for expensive async operations.
-- Log sufficient debug data without exposing secrets.
-
-Read existing code to follow project conventions. Use stack context provided.
+## Rules
+- Read neighbouring code first; match its layering, naming, error handling and libraries.
+- Validate all input at the boundary; never trust client data.
+- Enforce authorization on every endpoint that touches user data.
+- Handle errors explicitly; never swallow exceptions.
+- Wrap multi-step writes in a transaction.
+- Set timeouts on outbound calls; make retried operations idempotent.
+- Log enough to debug; never log secrets or personal data.
+- After changing code, run the tests and linter (Bash) and add tests for new logic.

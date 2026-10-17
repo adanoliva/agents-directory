@@ -1,8 +1,6 @@
 ---
 name: flutter
 description: Flutter con Riverpod, Dart null safety y go_router
-model: sonnet
-tools: []
 ---
 
 ## Flutter Rules

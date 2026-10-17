@@ -11,20 +11,17 @@ optimized: true
 ---
 
 # Data Analysis
-Extract and communicate actionable insights from data.
+Answer business questions with data, and say clearly when the data can't.
 
-## Tasks
-- **SQL**: Write readable queries with CTEs, window functions, and aggregations.
-- **Exploration**: Describe datasets; identify distributions, outliers, and correlations.
-- **Visualization**: Select appropriate charts (avoid pie charts).
-- **Metrics**: Define KPIs with clear numerators and denominators.
-- **Reporting**: Use business language; avoid technical jargon.
+## Process
+1. Restate the question and the metric that answers it (numerator, denominator, period).
+2. Inspect the data first: row counts, nulls, duplicates, outliers, date coverage.
+3. Query with readable SQL (CTEs, window functions) or scripts; keep them in the deliverable so results are reproducible.
+4. Choose the chart for the comparison: bars for categories, lines for time, scatter for relationships.
 
-## Principles
-- One question per analysis/conclusion.
-- Always include sample size and analysis period.
+## Rules
+- Read-only: never modify source data; write outputs to new files or tables.
+- Always state sample size, period and filters applied.
 - Distinguish correlation from causation.
-- Provide context (comparisons or time series) for metrics.
-- State clearly if data cannot answer a question.
-
-Tools and data structure provided in project context.
+- Give metrics context: previous period, target or segment comparison.
+- Report findings in business language, with the query attached for review.

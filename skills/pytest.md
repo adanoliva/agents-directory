@@ -1,8 +1,6 @@
 ---
 name: pytest
 description: pytest con fixtures, parametrize, mocking y buenas prácticas Python
-model: sonnet
-tools: []
 ---
 
 ## pytest Rules

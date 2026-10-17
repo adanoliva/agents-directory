@@ -1,8 +1,6 @@
 ---
 name: python-fastapi
 description: FastAPI con Pydantic v2, async/await y SQLAlchemy
-model: sonnet
-tools: []
 ---
 
 ## FastAPI Rules (Python 3.11+)

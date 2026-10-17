@@ -1,8 +1,6 @@
 ---
 name: kubernetes
 description: Kubernetes con Deployments, Services, ConfigMaps y Helm
-model: sonnet
-tools: []
 ---
 
 ## Kubernetes Rules

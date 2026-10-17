@@ -1,8 +1,6 @@
 ---
 name: dotnet
 description: .NET 8 con ASP.NET Core, minimal APIs y Entity Framework
-model: sonnet
-tools: []
 ---
 
 ## .NET Rules

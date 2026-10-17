@@ -1,8 +1,6 @@
 ---
 name: shadcn
 description: shadcn/ui con Radix UI, Tailwind y class-variance-authority
-model: sonnet
-tools: []
 ---
 
 ## shadcn/ui Rules

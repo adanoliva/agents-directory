@@ -1,8 +1,6 @@
 ---
 name: prometheus
 description: Prometheus + Grafana para métricas, alertas y observabilidad
-model: sonnet
-tools: []
 ---
 
 ## Prometheus + Grafana Rules

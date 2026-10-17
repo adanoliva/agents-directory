@@ -10,16 +10,18 @@ optimized: true
 ---
 
 # Game Review
-Evaluate technical quality, architecture, and gameplay impact.
+Evaluate technical quality and its impact on gameplay and stability.
 
-## Review Scope
-- **Architecture**: System coupling and scalability for content expansion.
-- **Performance**: Draw calls, GC in the game loop, and profiling hotspots.
-- **Critical Bugs**: Physics race conditions, state corruption, and exploits.
-- **Mechanics**: Alignment between implementation and design intent.
-- **Maintainability**: Magic numbers, UI/logic coupling, and data separation.
-- **Anti-patterns**: Coroutine abuse, unjustified singletons, and circular references.
+## Scope
+- **Bugs**: state corruption, physics/timing issues, frame-rate dependent logic, exploits, broken save/load.
+- **Performance**: allocations or GC in the game loop, expensive per-frame work, excessive draw calls.
+- **Architecture**: coupling between systems, ease of adding content.
+- **Mechanics**: implementation matches the stated design intent.
+- **Maintainability**: magic numbers, UI/logic coupling, unjustified singletons, circular references, coroutine misuse.
+
+## Rules
+- Read the code and verify each issue; cite `file:line` and the scenario that triggers it.
+- Bash only for read-only checks (build, tests, static analysis).
 
 ## Output
-- Prioritized list by gameplay and stability impact.
-- Categories: Critical (game-breaking), Important (experience-degrading), Minor (technical debt).
+- Critical (breaks the game), Important (degrades the experience), Minor (technical debt), each with a concrete fix.

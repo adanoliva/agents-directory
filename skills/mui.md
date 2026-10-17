@@ -1,8 +1,6 @@
 ---
 name: mui
 description: MUI v6 con sistema sx, temas y componentes de Material Design
-model: sonnet
-tools: []
 ---
 
 ## Material UI (MUI) v6 Rules

@@ -1,8 +1,6 @@
 ---
 name: docker
 description: Docker con multi-stage builds, Docker Compose y buenas prácticas
-model: sonnet
-tools: []
 ---
 
 ## Docker Rules

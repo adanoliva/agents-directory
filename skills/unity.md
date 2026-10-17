@@ -1,8 +1,6 @@
 ---
 name: unity
 description: Unity 6 con C#, URP/HDRP y arquitectura de componentes
-model: sonnet
-tools: []
 ---
 
 ## Unity 6

@@ -1,8 +1,6 @@
 ---
 name: terraform
 description: Terraform con módulos, remote state y buenas prácticas de IaC
-model: sonnet
-tools: []
 ---
 
 ## Terraform

@@ -1,8 +1,6 @@
 ---
 name: mysql
 description: MySQL 8 / MariaDB con InnoDB, índices y optimización de queries
-model: sonnet
-tools: []
 ---
 
 ## MySQL / MariaDB Rules

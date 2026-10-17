@@ -1,8 +1,6 @@
 ---
 name: vue
 description: Vue 3 con Composition API, TypeScript y Pinia
-model: sonnet
-tools: []
 ---
 
 ## Vue 3

@@ -1,8 +1,6 @@
 ---
 name: testing-vitest
 description: Vitest para tests unitarios y de integración en proyectos Vite
-model: sonnet
-tools: []
 ---
 
 ## Vitest

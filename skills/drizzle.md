@@ -1,8 +1,6 @@
 ---
 name: drizzle
 description: Drizzle ORM con TypeScript, migraciones y query builder tipado
-model: sonnet
-tools: []
 ---
 
 ## Drizzle ORM Rules

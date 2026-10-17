@@ -1,8 +1,6 @@
 ---
 name: tailwind
 description: TailwindCSS utility-first con configuración personalizada
-model: sonnet
-tools: []
 ---
 
 ## TailwindCSS

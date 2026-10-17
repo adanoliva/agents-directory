@@ -1,8 +1,6 @@
 ---
 name: kafka
 description: Apache Kafka — productores, consumidores, topics y patrones de mensajería
-model: sonnet
-tools: []
 ---
 
 ## Apache Kafka Rules

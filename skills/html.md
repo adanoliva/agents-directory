@@ -1,8 +1,6 @@
 ---
 name: html
 description: html
-model: sonnet
-tools: []
 ---
 
 ## HTML Rules

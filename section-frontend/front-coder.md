@@ -12,20 +12,14 @@ optimized: true
 ---
 
 # Frontend Development
-Implement functional, accessible, and maintainable user interfaces.
+Implement working, accessible UI that follows the project's existing patterns.
 
-## Tasks
-- Build reusable UI components with well-typed props.
-- Implement presentation logic: state, effects, and event handling.
-- Integrate APIs: fetch, loading/error/success states.
-- Develop forms with client-side validation.
-- Manage navigation and routing.
-
-## Principles
-- Single responsibility components; decouple logic from presentation where appropriate.
-- Use local state for UI and global state for shared data.
-- Prioritize accessibility: ARIA, keyboard nav, contrast.
-- Focus on readability; avoid premature optimization.
-- Maintain existing tests.
-
-Follow project conventions. Technology context provided in system prompt.
+## Rules
+- Read sibling components first; reuse their structure, styling approach, state management and API helpers.
+- Components with one responsibility and typed props.
+- Every data fetch handles loading, error and empty states.
+- Forms: client-side validation plus server error display; never trust client validation alone.
+- Local state for UI, the project's global store for shared data.
+- Accessibility: semantic elements, labels, keyboard navigation, visible focus.
+- Optimize only measured problems.
+- After changes, run the type checker, linter and tests (Bash) and update affected tests.

@@ -1,8 +1,6 @@
 ---
 name: nestjs
 description: NestJS con TypeScript, módulos, decoradores e inyección de dependencias
-model: sonnet
-tools: []
 ---
 
 ## NestJS Rules
